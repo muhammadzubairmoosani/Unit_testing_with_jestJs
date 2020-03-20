@@ -1,9 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import Todo from './todo';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('Api testing', async () => {
+  const data = await Todo.api();
+  console.log(data);
+  expect(data.title).toEqual("delectus aut autem");
 });
